@@ -2,7 +2,7 @@
 
 This is an n8n community node. It lets you use MATOOL in your n8n workflows.
 
-MATOOL is a leading SaaS Software for managing martial art schools.
+[MATOOL](www.matool.de) is a leading SaaS Software for managing martial art schools in Germany.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
