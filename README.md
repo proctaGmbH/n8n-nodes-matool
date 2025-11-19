@@ -1,12 +1,24 @@
 # n8n-nodes-matool
-n8n community node for integration of MATOOL
 
-# General Information
-This project is intended to extend n8n's (www.n8n.io) automation possibilities
-to interact with the martial art management software matool (www.matool.de).
+This is an n8n community node. It lets you use MATOOL in your n8n workflows.
 
-# Functionality
-This project provides following 2 nodes for n8n:
+MATOOL is a leading SaaS Software for managing martial art schools.
+
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
+
+[Installation](#installation)  
+[Operations](#operations)  
+[Credentials](#credentials) 
+[Compatibility](#compatibility)  
+[Resources](#resources)  
+
+## Installation
+
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+## Operations
+
+There are two nodes included in this package.
 
 ### MATOOL Node
 This node allows you to read or create new items in MATOOL.
@@ -16,6 +28,18 @@ In this initial Version you can create prospects only.
 This node receives events from MATOOL to react on in n8n.
 In this initial version you can receive newly created prospects from MATOOL.
 
-# Authentication
-In order to use this node you have to authenticate your account from MATOOL.
-You can generate a so called API Token in MATOOL which is then used for authentication.
+## Credentials
+
+In order to use this node you have to be a MATOOL customer and authenticate your account from MATOOL.
+You must generate an API Token in MATOOL if not already done which is then used for authentication inside your n8n node.
+
+## Compatibility
+
+There are no known incompatabilies with n8n. These nodes are tested against n8n version 1.118
+
+## Resources
+
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
+
+
+
