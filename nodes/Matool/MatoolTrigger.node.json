@@ -1,0 +1,21 @@
+
+{
+	"node": "n8n-nodes-base.Matool",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"Miscellaneous"
+	],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://api.matool.de/service/api-doc.pdf"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://api.matool.de/service/api-doc.pdf"
+			}
+		]
+	}
+}
