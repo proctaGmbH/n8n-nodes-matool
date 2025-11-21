@@ -18,7 +18,7 @@ export class MatoolApi implements ICredentialType {
 
     properties: INodeProperties[] = [
         {
-            displayName: 'Api Key',
+            displayName: 'Api key',
             name: 'apiKey',
             type: 'string',
             typeOptions: { password: true },
