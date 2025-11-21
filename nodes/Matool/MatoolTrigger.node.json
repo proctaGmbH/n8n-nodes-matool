@@ -9,12 +9,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://api.matool.de/service/api-doc.pdf"
+				"url": "https://github.com/proctaGmbH/n8n-nodes-matool"
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://api.matool.de/service/api-doc.pdf"
+				"url": "https://github.com/proctaGmbH/n8n-nodes-matool"
 			}
 		]
 	}
