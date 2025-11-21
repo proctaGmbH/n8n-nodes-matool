@@ -14,7 +14,7 @@ export class MatoolApi implements ICredentialType {
     icon: Icon = { light: 'file:../nodes/Matool/logo.svg', dark: 'file:../nodes/Matool/logo_dark.svg' };
     
     documentationUrl =
-        'https://api.matool.de/service/api-doc.pdf';
+        'https://github.com/proctaGmbH/n8n-nodes-matool';
 
     properties: INodeProperties[] = [
         {
