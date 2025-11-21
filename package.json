@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-matool-custom-nodes",
+	"name": "n8n-nodes-matool",
 	"version": "0.1.0",
 	"description": "MATOOL Custom Nodes for n8n",
 	"license": "MIT",
