@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"homepage": "https://www.matool.de",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"matool"
 	],
 	"author": {
 		"name": "procta internet solutions GmbH",
