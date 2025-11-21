@@ -34,14 +34,14 @@ export class Matool implements INodeType {
                 name: 'action',
                 type: 'options',
                 options: [
-                    { name: 'Get account name', value: 'getAccountname' },
-                    { name: 'Create prospect', value: 'createProspect' },
+                    { name: 'Get Account Name', value: 'getAccountname' },
+                    { name: 'Create Prospect', value: 'createProspect' },
                 ],
                 default: 'getAccountname',
                 description: 'Choose your MATOOL action',
             },       
             {
-                displayName: 'First name',
+                displayName: 'First Name',
                 name: 'firstName',
                 type: 'string',
                 required: true,
@@ -57,7 +57,7 @@ export class Matool implements INodeType {
                 description: 'First name of the prospect to create'
             },
             {
-                displayName: 'Last name',
+                displayName: 'Last Name',
                 name: 'lastName',
                 type: 'string',
                 required: true,
