@@ -35,7 +35,7 @@ You must generate an API Token in MATOOL if not already done which is then used 
 
 ## Compatibility
 
-There are no known incompatabilies with n8n. These nodes are tested against n8n version 1.118
+There are no known incompatabilies with n8n. These nodes are tested against n8n version 1.115
 
 ## Resources
 
