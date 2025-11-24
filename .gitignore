@@ -1,5 +1,3 @@
 dist
 node_modules
-pnpm-lock.yaml
-eslint.config.mjs
-package-lock.json
+win_docker_deploy.bat

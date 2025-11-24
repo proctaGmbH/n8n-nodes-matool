@@ -1,6 +1,5 @@
 import type {
     IAuthenticateGeneric,
-    Icon,
     ICredentialTestRequest,
     ICredentialType,
     INodeProperties,
@@ -8,13 +7,9 @@ import type {
 
 export class MatoolApi implements ICredentialType {
     name = 'matoolApi';
-
     displayName = 'MATOOL API';
-
-    icon: Icon = { light: 'file:../nodes/Matool/logo.svg', dark: 'file:../nodes/Matool/logo_dark.svg' };
-    
-    documentationUrl =
-        'https://github.com/proctaGmbH/n8n-nodes-matool';
+    icon = 'file:logo.svg' as const; 
+    documentationUrl = 'https://github.com/proctaGmbH/n8n-nodes-matool';
 
     properties: INodeProperties[] = [
         {
