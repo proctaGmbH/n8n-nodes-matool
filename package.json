@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-matool",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "MATOOL Custom Nodes for n8n",
 	"license": "MIT",
 	"homepage": "https://www.matool.de",
@@ -31,11 +31,11 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-		"dist/credentials/MatoolApi.credentials.js"	
-	],
+			"dist/credentials/MatoolApi.credentials.js"
+		],
 		"nodes": [
-		"dist/nodes/Matool/Matool.node.js",
-		"dist/nodes/Matool/MatoolTrigger.node.js"
+			"dist/nodes/Matool/Matool.node.js",
+			"dist/nodes/Matool/MatoolTrigger.node.js"
 		]
 	},
 	"devDependencies": {
@@ -49,4 +49,3 @@
 		"n8n-workflow": "*"
 	}
 }
-
