@@ -26,12 +26,16 @@ In this initial Version you can create prospects only.
 
 ### MATOOL Trigger Node
 This node receives events from MATOOL to react on in n8n.
-In this initial version you can receive newly created prospects from MATOOL.
+It offers following notifications:
+* prospect creation
+* prospect status change
+* member creation
+* membership termination
 
 ## Credentials
 
 In order to use this node you have to be a MATOOL customer and authenticate your account from MATOOL.
-You must generate an API Token in MATOOL if not already done which is then used for authentication inside your n8n node.
+You must generate an API Token for n8n in MATOOL if not already done which is then used for authentication inside your n8n node.
 
 ## Compatibility
 
