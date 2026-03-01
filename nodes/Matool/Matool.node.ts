@@ -35,7 +35,8 @@ export class Matool implements INodeType {
                 type: 'options',
                 options: [
                     { name: 'Get Account Name', value: 'getAccountname' },
-                    { name: 'Create Prospect', value: 'createProspect' },
+                    { name: 'Create Prospect', value: 'createProspect' },                                    
+                    { name: 'Get Memberships', value: 'getMemberships' }, 
                 ],
                 default: 'getAccountname',
                 description: 'Choose your MATOOL action',
@@ -174,7 +175,49 @@ export class Matool implements INodeType {
                         placeholder: 'e.g. 90411',
                     },                                                                                                                                                                                                                           
                 ],
-            },                      
+            },
+            {
+				displayName: 'Options',
+				name: 'getMembershipOption',
+				type: 'options',
+                required: true,
+				options: [
+					{ name: 'Newly Created', value: 'newlycreated' },
+					{ name: 'Renewals', value: 'renewals' },
+				],
+				default: 'renewals',
+				description: 'Choose your list option',
+                displayOptions: {
+                    show: { action: ['getMemberships',],},
+                },
+            },
+            {
+				displayName: 'Reference Days',
+				name: 'getMembershipDays',
+				type: 'options',
+                required: true,
+				options: [
+					{ name: '14 Days', value: '14' },
+					{ name: '28 Days', value: '28' },
+                    { name: '42 Days', value: '42' },
+				],
+				default: '14',
+				description: 'Select the days this action references to',
+                displayOptions: {
+                    show: { action: ['getMemberships',],},
+                },
+            },
+            {
+				displayName: 'Sector',
+				name: 'getMembershipSector',
+				type: 'string',
+				default: '',
+                placeholder: 'e.g. Karate',
+				description: 'Filter your sector',
+                displayOptions: {
+                    show: { action: ['getMemberships',],},
+                },
+            },                                             
 		],
 	};
 
@@ -241,7 +284,19 @@ export class Matool implements INodeType {
                 responseData = await this.helpers.httpRequestWithAuthentication.call(this, 'matoolApi', options);
                 returnData.push(responseData);
             }
-
+            if (action === 'getMemberships') {
+                const apiOption = this.getNodeParameter('getMembershipOption', i) as string;
+                const apiDays = this.getNodeParameter('getMembershipDays', i) as string;
+                const apiSector = this.getNodeParameter('getMembershipSector', i) as string;
+                const options: IHttpRequestOptions = {
+                    method: 'GET',
+                    url: `https://api.matool.de/service/index.php?todo=memberships&option=${apiOption}&days=${apiDays}&sector=${apiSector}`,
+                    json: true,
+                };
+                //this.logger.debug('MATOOL GetMembership Call', { url: options.url });
+                responseData = await this.helpers.httpRequestWithAuthentication.call(this, 'matoolApi', options);
+                returnData.push(responseData);
+            }  
         }
         return [this.helpers.returnJsonArray(returnData)];        
 	}

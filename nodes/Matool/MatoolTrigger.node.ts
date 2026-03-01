@@ -56,11 +56,13 @@ export class MatoolTrigger implements INodeType {
 						value: 'new_prospect',  //trigger name from MATOOL API documentation
 						description: 'Receive notifications for newly created prospects',
 					},
+					/* disabled
 					{
 						name: 'Prospect Status Changed',
 						value: 'prospect_status_changed',  //trigger name from MATOOL API documentation
 						description: 'Receive notifications for status changes of prospects',
 					},
+					*/
 					{
 						name: 'Member Created',
 						value: 'new_member',  //trigger name from MATOOL API documentation

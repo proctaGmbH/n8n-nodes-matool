@@ -22,13 +22,14 @@ There are two nodes included in this package.
 
 ### MATOOL Node
 This node allows you to read or create new items in MATOOL.
-In this initial Version you can create prospects only.
+* create prospects
+* get membership renewals
+* get newly created memberships
 
 ### MATOOL Trigger Node
 This node receives events from MATOOL to react on in n8n.
 It offers following notifications:
 * prospect creation
-* prospect status change
 * member creation
 * membership termination
 
