@@ -235,7 +235,7 @@ export class Matool implements INodeType {
                     json: true,
                 };
                 responseData = await this.helpers.httpRequestWithAuthentication.call(this, 'matoolApi', options);
-                returnData.push(responseData);
+                returnData.push({ json: responseData as IDataObject, pairedItem: { item: i } });
             }            
             if (action === 'createProspect') {
                 const creationDate = "" as string;               
@@ -282,7 +282,7 @@ export class Matool implements INodeType {
                 };
 
                 responseData = await this.helpers.httpRequestWithAuthentication.call(this, 'matoolApi', options);
-                returnData.push(responseData);
+                returnData.push({ json: responseData as IDataObject, pairedItem: { item: i } });
             }
             if (action === 'getMemberships') {
                 const apiOption = this.getNodeParameter('getMembershipOption', i) as string;
@@ -295,9 +295,9 @@ export class Matool implements INodeType {
                 };
                 //this.logger.debug('MATOOL GetMembership Call', { url: options.url });
                 responseData = await this.helpers.httpRequestWithAuthentication.call(this, 'matoolApi', options);
-                returnData.push(responseData);
+                returnData.push({ json: responseData as IDataObject, pairedItem: { item: i } });
             }  
         }
-        return [this.helpers.returnJsonArray(returnData)];        
+        return [returnData];
 	}
 }

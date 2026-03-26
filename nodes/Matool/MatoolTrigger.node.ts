@@ -97,9 +97,7 @@ export class MatoolTrigger implements INodeType {
 					});
 					if (responseData?.hookId === undefined) {
 						delete webhookData.webhookId;
-
-						this.logger.debug('MATOOL webhook Response empty - deleting n8n Webhook data', { webhookId: webhookData.webhookId });
-
+						//this.logger.debug('MATOOL webhook Response empty - deleting n8n Webhook data', { webhookId: webhookData.webhookId });
 						return false;
 					}
 				} catch (error) {
@@ -109,7 +107,7 @@ export class MatoolTrigger implements INodeType {
 						{ level: 'warning' },
 					);
 				}
-				this.logger.debug('n8n Webhook found in MATOOL', { webhookId: webhookData.webhookId });
+				//this.logger.debug('n8n Webhook found in MATOOL', { webhookId: webhookData.webhookId });
 				return true;
 			},
 
@@ -130,7 +128,7 @@ export class MatoolTrigger implements INodeType {
 					triggerName: event,
 				};
 
-				this.logger.debug('Creating MATOOL webhook', data);
+				//this.logger.debug('Creating MATOOL webhook', data);
 		
 				const options: IHttpRequestOptions = {
 					headers: {
@@ -145,7 +143,7 @@ export class MatoolTrigger implements INodeType {
 				let responseData;
 				try {
 					responseData = await this.helpers.httpRequestWithAuthentication.call(this, 'matoolApi',	options);
-					this.logger.debug(responseData.body, responseData.statusCode);
+					//this.logger.debug(responseData.body, responseData.statusCode);
 				} catch (error) {
 					throw new NodeOperationError(
 						this.getNode(),
@@ -188,17 +186,17 @@ export class MatoolTrigger implements INodeType {
 	};
 
 	async webhook(this: IWebhookFunctions): Promise<IWebhookResponseData> {
-        this.logger.debug('MATOOL Webhook request details', { method: this.getRequestObject().method, query: this.getRequestObject().query, headers: this.getHeaderData() });
+        //this.logger.debug('MATOOL Webhook request details', { method: this.getRequestObject().method, query: this.getRequestObject().query, headers: this.getHeaderData() });
 		const req = this.getRequestObject();
 		const bodyData = this.getBodyData();
 		const httpMethod = req.method?.toUpperCase() || 'POST';
 
 		if (httpMethod === 'GET') {
 			if (req.query?.url) {
-                this.logger.debug('MATOOL Webhook verification request', { url: req.query.url });
+                //this.logger.debug('MATOOL Webhook verification request', { url: req.query.url });
 				return { webhookResponse: 'OK' };
 			}
-            this.logger.debug('MATOOL Health check GET request received');
+           //this.logger.debug('MATOOL Health check GET request received');
 			return {
 				webhookResponse: JSON.stringify({
 					status: 'healthy',
@@ -215,7 +213,7 @@ export class MatoolTrigger implements INodeType {
 				return { webhookResponse: 'OK' };
 			}
 
-            this.logger.debug('MATOOL Webhook processing event', { body: bodyData });
+            //this.logger.debug('MATOOL Webhook processing event', { body: bodyData });
 			const returnData: IDataObject []= [];
 
 			let jsonBody;
